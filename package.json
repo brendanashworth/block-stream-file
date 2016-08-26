@@ -1,6 +1,6 @@
 {
   "name": "block-stream-file",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "transform input into equally-sized blocks of output, using files as buffer",
   "main": "index.js",
   "dependencies": {
