@@ -1,16 +1,13 @@
 # block-stream2
 
-transform input into equally-sized chunks as output
+transform input into equally-sized chunks as output, using a temporary file to buffer instead of memory
 
-streams2 version of
-[block-stream](https://npmjs.org/package/block-stream)
-
-[![build status](https://secure.travis-ci.org/substack/block-stream2.png)](http://travis-ci.org/substack/block-stream2)
+[![build status](https://secure.travis-ci.org/brendanashworth/block-stream-file.png)](http://travis-ci.org/brendanashworth/block-stream-file)
 
 # example
 
 ``` js
-var block = require('block-stream2');
+var block = require('block-stream-file');
 var through = require('through2');
 
 process.stdin
@@ -44,7 +41,7 @@ buf[16]=fur\x0a\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 # methods
 
 ``` js
-var block = require('block-stream2');
+var block = require('block-stream-file');
 ```
 
 ## var b = block(opts)
@@ -60,7 +57,7 @@ When `opts.zeroPadding` is false, do not zero-pad the last chunk.
 With [npm](https://npmjs.org) do:
 
 ```
-npm install block-stream2
+npm install block-stream-file
 ```
 
 # license
