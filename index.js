@@ -54,6 +54,8 @@ function tryFlush(stream, next) {
     }
 
     var buf = new Buffer(stream.size);
+    buf.fill(0);
+
     fs.read(stream._buffer.fd, buf, 0, buf.length, stream._bufferPosition, function(err, bytesRead, buffer) {
         if (err) {
             return next(err);
@@ -77,8 +79,9 @@ Block.prototype._flush = function (callback) {
     // Nothing to do.
     if (!this._bufferedBytes) return callback();
 
-    // If we want to pad with zeroes, instantiate a Buffer first.
-    var zeroes = this._zeroPadding ? (new Buffer(this.size)).fill(0) : new Buffer(this._bufferedBytes);
+    // If we want to pad with zeroes, instantiate the Buffer to be larger.
+    var zeroes = new Buffer(this._zeroPadding ? this.size : this._bufferedBytes);
+    zeroes.fill(0);
 
     // Read into the buffer filled with zeroes, so that we overwrite the zeroes with
     // data that we have but leave the rest zeroed out.
