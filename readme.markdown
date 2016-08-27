@@ -1,4 +1,4 @@
-# block-stream2 [![build status](https://secure.travis-ci.org/brendanashworth/block-stream-file.png)](http://travis-ci.org/brendanashworth/block-stream-file)
+# block-stream-file [![build status](https://secure.travis-ci.org/brendanashworth/block-stream-file.png)](http://travis-ci.org/brendanashworth/block-stream-file)
 
 transform input into equally-sized chunks as output, using a temporary file to buffer instead of memory
 
